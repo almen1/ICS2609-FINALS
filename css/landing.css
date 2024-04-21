@@ -24,13 +24,25 @@
 
 @keyframes slideinTop {
     from {
-        opacity: 50%;
-        transform: translateY(-900px)
+        opacity: 0%;
+        transform: translateY(-200px)
     }
 
     to {
         opacity: 100%;
         transform: translateY(0);
+    }
+}
+
+@keyframes slideinBottom {
+    from {
+        opacity: 0%;
+        transform: translateY(200px)
+    }
+
+    to {
+        opacity: 100%;
+        transform: translateY(-70%);
     }
 }
 
@@ -74,7 +86,7 @@ h1,
 h2,
 a {
     font-size: 1rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Inter", sans-serif;
     font-style: normal;
     text-decoration: none;
 }
@@ -86,8 +98,8 @@ ul {
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
+    height: max(100vh, 100vh);
+    width: max(100vw, 100vw);
     margin: 0;
     overflow: hidden;
     color: var(--black);
@@ -99,166 +111,109 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 75px;
-    padding: 0em 0.70em 0em 0.70em;
-    animation: slideinTop 1s ease-in-out;
+    height: max(10vmin, 10vmin);
+    z-index: 0;
 }
 
 .navbar a{
     color: var(--black);
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 500;
+}
+
+.nav-elements li{
+    margin: 0 2.5em 0 2.5em;
 }
 
 .nav-icon {
     position: absolute;
-    left: 0;
-    margin-left: 1em;
-    width: 55px;
-    height: 55px;
+    left: 3%;
+    width: 100px;
+    height: 40px;
     background-image: url(../assets/hope-logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
-}
 
-.nav-elements li{
-    margin: 0.35em 2.5em 0 2.5em;
-    transition: transform 0.1s ease-in-out;
-}
-
-.nav-elements li:hover{
-    transform: scale(1.1);
-    transform: translateY(3px);
 }
 
 .container {
+    height: calc(100vh - 10vmin);
+    width: max(100vw, 100vw);
+    background-image: url(../assets/hope-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    height: calc(100vh - 85px);
-    padding: 0.35em;
+    grid-template-columns: repeat(2, 1fr);
+    animation: fadeIn 1s ease-in-out
 }
 
 .hero {
-    padding: 0.35em;
-}
-
-.hero-bg {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    z-index: -1;
-    background-image: url(../assets/hope-hero-bg.svg), linear-gradient(rgba(46, 46, 46, 0.6), rgba(46, 46, 46, 0.6));
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    border-radius: 25px;
-    overflow: hidden;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.hero-title {
-    font-family: "Open Sans", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17rem;
-    letter-spacing: 1rem;
-    z-index: 1;
+    gap: 0px;
+    padding: 5em;
     color: var(--white);
-    cursor: default;
-    animation: slideinLeft 1s ease-in-out;
-    margin-left: 0.15em;
 }
 
-.card-track {
+.hero-elements {
     display: flex;
-    overflow-x: scroll;
-    padding: 0.35em 0 0.35em 0;
-    animation: slideinRight 1s ease-in-out;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
-.card {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    height: 100%;
-    min-width: 610px;
-    margin: 0 0.35em 0 0.35em;
+.hero-elements p{
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+.hero-elements button{
+    margin-left: 1.5em;
+    height: 50px;
+    width: 150px;
+    background-color: var(--white);
+    border: none;
     border-radius: 25px;
-    cursor: pointer;
-    transition: all .4s ease-in-out;
-}
-/* 
-.card:hover {
-    background-color: #d4d4d4;
-} */
-
-.card p {
-    z-index: 1;
-    font-size: 3.5rem;
-    font-weight: 500;
-    margin: 0.5em;
+    transform: translateY(-50%);
 }
 
-.card:nth-child(1),.card:nth-child(2),.card:nth-child(3) {
+.hero-elements button:hover{
     background-color: var(--gray);
 }
 
-.card:nth-child(4) {
-    background-image: url(../assets/hope-sdg1.svg), linear-gradient(rgba(46, 46, 46, 0.6),rgba(239, 35, 61, 0.6));
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: var(--white);
+button p {
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    text-decoration: none;
 }
 
-.card:nth-child(5) {
-    background-image: url(../assets/hope-sdg2.svg), linear-gradient(rgba(46, 46, 46, 0.6),rgba(221, 167, 58, 0.6));
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: var(--white);
+#hero-title {
+    font-size: 13rem;
+    animation: slideinTop 1s ease-in-out;
 }
 
-.card:nth-child(6) {
-    background-image: url(../assets/hope-sdg3.svg), linear-gradient(rgba(46, 46, 46, 0.6),rgba(76, 161, 70, 0.6));
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: var(--white);
+#hero-sub {
+    margin-left: 0.3em;
+    letter-spacing: 0.1em;
+    font-size: 3.5rem;
+    transform: translateY(-70%);
+    animation: slideinBottom 1s ease-in-out;
 }
 
-.card:nth-child(7) {
-    background-image: url();
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: var(--white);
-}
 
-.card:nth-child(8) {
-    background-image: url();
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: var(--white);
-}
 
-.card:nth-child(9) {
-    background-image: url();
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: var(--white);
-}
 
-.card:nth-child(10) {
-    background-image: url();
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: var(--white);
-}
+
+
+
+
+
+
+
+
 
 
 
