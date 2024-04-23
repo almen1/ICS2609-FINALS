@@ -1,63 +1,3 @@
-@keyframes slideinLeft {
-    from {
-        opacity: 50%;
-        transform: translateX(-900px)
-    }
-
-    to {
-        opacity: 100%;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideinRight {
-    from {
-        opacity: 50%;
-        transform: translateX(900px)
-    }
-
-    to {
-        opacity: 100%;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideinTop {
-    from {
-        opacity: 0%;
-        transform: translateY(-200px)
-    }
-
-    to {
-        opacity: 100%;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideinBottom {
-    from {
-        opacity: 0%;
-        transform: translateY(200px)
-    }
-
-    to {
-        opacity: 100%;
-        transform: translateY(-70%);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0%;
-        transform: scale(0.5);
-    }
-
-    to {
-        opacity: 100%;
-        transform: scale(1);
-    }
-}
-
 :root {
     --white: #ffffff;
     --black: #2e2e2e;
@@ -98,13 +38,21 @@ ul {
 }
 
 body {
-    height: max(100vh, 100vh);
-    width: max(100vw, 100vw);
-    margin: 0;
-    overflow: hidden;
-    color: var(--black);
-    box-sizing: border-box;
-    background-color: var(--white);
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    background-color: var(--black);
+}
+
+main {
+    background-image: url("../assets/hope-bg.svg");
+    background-position: center 0%;
+    background-size: cover;
+    height: calc(100vh - 10vmin);
+    width: 100vw;
+    position: relative;
+    z-index: 2;
+    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
 }
 
 .navbar {
@@ -113,16 +61,22 @@ body {
     justify-content: center;
     height: max(10vmin, 10vmin);
     z-index: 0;
+    background-color: var(--white);
 }
 
-.navbar a{
+.navbar a {
     color: var(--black);
     font-size: 1.25rem;
     font-weight: 500;
 }
 
-.nav-elements li{
+.nav-elements li {
     margin: 0 2.5em 0 2.5em;
+    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+}
+
+.nav-elements li:hover {
+    transform: scale(1.1);
 }
 
 .nav-icon {
@@ -136,86 +90,113 @@ body {
 
 }
 
-.container {
-    height: calc(100vh - 10vmin);
-    width: max(100vw, 100vw);
-    background-image: url(../assets/hope-bg.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    animation: fadeIn 1s ease-in-out
-}
-
-.hero {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    gap: 0px;
-    padding: 5em;
-    color: var(--white);
-}
-
-.hero-elements {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-}
-
-.hero-elements p{
-    margin: 0;
-    padding: 0;
-    font-weight: 300;
-}
-
-.hero-elements button{
-    margin-left: 1.5em;
-    height: 50px;
-    width: 150px;
-    background-color: var(--white);
-    border: none;
-    border-radius: 25px;
+body[data-card="true"]>main {
     transform: translateY(-50%);
 }
 
-.hero-elements button:hover{
-    background-color: var(--gray);
+.container {
+    height: calc(50vh - 10vmin);
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 
-button p {
-    font-size: 1rem;
-    font-family: "Inter", sans-serif;
-    font-style: normal;
+#card-track {
+    display: flex;
+    gap: clamp(1rem, 2vw, 2rem);
+    margin-top: clamp(2rem, 2vw, 3rem);
+    padding: 0rem clamp(1rem, 2vw, 2rem);
+    transform: translateY(70%) scale(0.9);
+    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+}
+
+body[data-card="true"]>.container>#card-track {
+    transform: translateY(0%) scale(1);
+}
+
+#card-track>.card-link {
     text-decoration: none;
 }
 
-#hero-title {
-    font-size: 13rem;
-    animation: slideinTop 1s ease-in-out;
+.card-link {
+    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
 }
 
-#hero-sub {
-    margin-left: 0.3em;
-    letter-spacing: 0.1em;
-    font-size: 3.5rem;
-    transform: translateY(-70%);
-    animation: slideinBottom 1s ease-in-out;
+.card-link:hover {
+    transform: scale(1.04);
 }
 
+#card-track>.card-link>.card-link-label {
+    color: var(--white);
+    font-size: 1.25rem;
+    margin: 0rem;
+    text-transform: uppercase;
+}
 
+#card-track>.card-link>.card-link-image {
+    width: max(20vw, 400px);
+    aspect-ratio: 1.8 / 1;
+    border-radius: 0.5rem;
+    margin-top: 0.75rem;
+    object-fit: cover;
+}
 
+#card-toggle {
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    z-index: 3;
+    left: 50%;
+    bottom: 3rem;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    border: none;
+    border-radius: 5rem;
+    outline: none;
+    box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 35%);
+    cursor: pointer;
+    transition: transform, background-color;
+    transition-timing-function: ease;
+    transition-duration: 400ms;
+    font-size: 1.25rem;
+}
 
+#card-toggle:hover {
+    transform: translateX(-50%) scale(1.04);
+}
 
+#card-toggle:active {
+    transform: translateX(-50%) scale(0.96);
+}
 
+body[data-card="true"]>#card-toggle {
+    background-color: rgb(85, 130, 149);
+    color: var(--white);
+    transform: rotate(180deg);
+}
 
+body:not([data-card="true"])>#card-toggle:hover>.open {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
 
+#card-toggle>p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    color: var(--black);
+    opacity: 0;
+    transition: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 400ms;
+}
 
-
-
-
-
-
-
-
-
+body[data-card="true"]>#card-toggle>.close {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
