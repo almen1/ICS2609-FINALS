@@ -181,7 +181,7 @@ body[data-card="true"]>.container>#card-track {
     height: 100%;
     position: absolute;
     background: linear-gradient(to top, var(--sdg1), var(--black));
-    opacity: 0.6;
+    opacity: 0.4;
     top: 0;
     left: 0;
     z-index: 1;
@@ -192,7 +192,7 @@ body[data-card="true"]>.container>#card-track {
     height: 100%;
     position: absolute;
     background: linear-gradient(to top, var(--sdg2), var(--black));
-    opacity: 0.6;
+    opacity: 0.4;
     top: 0;
     left: 0;
     z-index: 1;
@@ -203,7 +203,161 @@ body[data-card="true"]>.container>#card-track {
     height: 100%;
     position: absolute;
     background: linear-gradient(to top, var(--sdg3), var(--black));
-    opacity: 0.6;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(4) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg4), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(5) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg5), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(6) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg6), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(7) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg7), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(8) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg8), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(9) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg9), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(10) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg10), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(11) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg11), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(12) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg12), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(13) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg13), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(14) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg14), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(15) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg15), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(16) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg16), var(--black));
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card-link:nth-child(17) .card-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to top, var(--sdg17), var(--black));
+    opacity: 0.4;
     top: 0;
     left: 0;
     z-index: 1;
