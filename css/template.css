@@ -1,0 +1,90 @@
+:root {
+    --white: #ffffff;
+    --black: #2e2e2e;
+    --gray: #e3e3e3;
+    --sdg1: #E5233D;
+    --sdg2: #DDA73A;
+    --sdg3: #4CA146;
+    --sdg4: #C7212F;
+    --sdg5: #EF402D;
+    --sdg6: #27BFE6;
+    --sdg7: #FBC412;
+    --sdg8: #A31C44;
+    --sdg9: #F26A2E;
+    --sdg10: #E01483;
+    --sdg11: #F89D2A;
+    --sdg12: #BF8D2C;
+    --sdg13: #407F46;
+    --sdg14: #1F97D4;
+    --sdg15: #59BA47;
+    --sdg16: #136A9F;
+    --sdg17: #14496B;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+a {
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    background-color: var(--black);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: max(10vmin, 10vmin);
+    z-index: 0;
+    background-color: var(--white);
+}
+
+.navbar a {
+    color: var(--black);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.nav-elements li {
+    margin: 0 2.5em 0 2.5em;
+    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+    cursor: pointer;
+}
+
+.nav-elements li:hover {
+    transform: scale(1.1);
+}
+
+.nav-icon {
+    position: absolute;
+    left: 3%;
+    width: 100px;
+    height: 40px;
+    background-image: url(../assets/hope-logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
+
