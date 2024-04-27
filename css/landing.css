@@ -45,8 +45,9 @@ body {
     height: 100vh;
     width: 100vw;
     margin: 0px;
-    background-color: var(--black);
-    overflow: scroll;
+    background-color: var(--white);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 main {
@@ -119,306 +120,100 @@ main>.hero-title {
     background-image: url(../assets/hope-logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
-
 }
 
 .container {
     height: 50vh;
-    width: 100%;
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
+    width: 100vw;
+    bottom: 0;
     z-index: 1;
+    margin: 5em 0;
 }
 
-#card-track {
+.card-track {
     display: flex;
-    gap: clamp(1rem, 2vw, 2rem);
-    margin-top: clamp(2rem, 2vw, 3rem);
-    padding: 0rem clamp(1rem, 2vw, 2rem);
-    transform: translateY(70%) scale(0.9);
-    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+    justify-content: space-evenly;
+    width: 100vw;
+    height: max(45vh, 45vh);
 }
 
-body[data-card="true"]>.container>#card-track {
-    transform: translateY(0%) scale(1);
-}
-
-#card-track>.card-link {
-    text-decoration: none;
-}
-
-.card-link {
+.card-track>.card-link {
+    position: relative;
+    z-index: 0;
+    background-color: var(--black);
+    aspect-ratio: 5/4;
+    box-shadow: -1px 15px 75px -8px rgba(0,0,0,0.75);
     transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
 }
 
 .card-link:hover {
-    transform: scale(1.04);
+    transform: scale(1.1);
 }
 
-#card-track>.card-link>.card-link-label {
+.card-link>p {
+    position: absolute;
+    bottom: 0;
+    margin: 0.4em;
+    text-decoration: none;
     color: var(--white);
-    font-size: 1.25rem;
-    margin: 0rem;
-    text-transform: uppercase;
-}
-
-#card-track>.card-link>.card-link-image {
-    width: max(20vw, 400px);
-    aspect-ratio: 1.8 / 1;
-    margin-top: 0.75rem;
-    object-fit: cover;
-    position: relative;
+    font-size: 3.5rem;
+    font-weight: 300;
+    z-index: 2;
 }
 
 .card-link:nth-child(1) .card-overlay {
+    background-color: var(--sdg1);
+    opacity: 0.4;
     width: 100%;
     height: 100%;
     position: absolute;
-    background: linear-gradient(to top, var(--sdg1), var(--sdg1));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
     z-index: 1;
+    top: 0;
 }
 
 .card-link:nth-child(2) .card-overlay {
+    background-color: var(--sdg2);
+    opacity: 0.4;
     width: 100%;
     height: 100%;
     position: absolute;
-    background: linear-gradient(to top, var(--sdg2), var(--sdg2));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
     z-index: 1;
+    top: 0;
 }
 
 .card-link:nth-child(3) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg3), var(--sdg3));
+    background-color: var(--sdg3);
     opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.card-link:nth-child(4) .card-overlay {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: linear-gradient(to top, var(--sdg4), var(--sdg4));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
     z-index: 1;
-}
-
-.card-link:nth-child(5) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg5), var(--sdg5));
-    opacity: 0.4;
     top: 0;
-    left: 0;
-    z-index: 1;
 }
 
-.card-link:nth-child(6) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg6), var(--sdg6));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.card-track .card-link:nth-child(1) {
+    background-image: url(../assets/hope-sdg1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.card-link:nth-child(7) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg7), var(--sdg7));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.card-track .card-link:nth-child(2) {
+    background-image: url(../assets/hope-sdg2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.card-link:nth-child(8) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg8), var(--sdg8));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.card-track .card-link:nth-child(3) {
+    background-image: url(../assets/hope-sdg3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.card-link:nth-child(9) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg9), var(--sdg9));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.aboutus {
+    width: 100vw;
+    height: 100vh;
+    background-color: pink;
 }
 
-.card-link:nth-child(10) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg10), var(--sdg9));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
 
-.card-link:nth-child(11) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg11), var(--sdg11));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.card-link:nth-child(12) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg12), var(--sdg12));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.card-link:nth-child(13) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg13), var(--sdg13));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.card-link:nth-child(14) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg14), var(--sdg14));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.card-link:nth-child(15) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg15), var(--sdg15));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.card-link:nth-child(16) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg16), var(--sdg16));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.card-link:nth-child(17) .card-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(to top, var(--sdg17), var(--sdg17));
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.card-link-image>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    z-index: 0;
-}
-
-#card-toggle {
-    height: 5rem;
-    width: 5rem;
-    position: fixed;
-    z-index: 3;
-    left: 50%;
-    bottom: 3rem;
-    transform: translateX(-50%);
-    background-color: var(--white);
-    border: none;
-    border-radius: 5rem;
-    outline: none;
-    box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 35%);
-    cursor: pointer;
-    transition: transform, background-color;
-    transition-timing-function: ease;
-    transition-duration: 400ms;
-    font-size: 1.25rem;
-}
-
-#card-toggle:hover {
-    transform: translateX(-50%) scale(1.04);
-}
-
-#card-toggle:active {
-    transform: translateX(-50%) scale(0.96);
-}
-
-body[data-card="true"]>#card-toggle {
-    background-color: rgb(85, 130, 149);
-    color: var(--white);
-    transform: rotate(180deg);
-}
-
-body:not([data-card="true"])>#card-toggle:hover>.open {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-#card-toggle>p {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    color: var(--black);
-    opacity: 0;
-    transition: transform, opacity;
-    transition-timing-function: ease;
-    transition-duration: 400ms;
-}
-
-body[data-card="true"]>#card-toggle>.close {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-}
 
