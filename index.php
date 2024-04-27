@@ -40,49 +40,49 @@
                     <p class="card-link-label">NO POVERTY</p>
                     <div class="card-link-image">
                         <div class="card-overlay"></div>
-                        <img src="./assets/hope-sdg1.svg">
+                        <img src="./assets/hope-sdg1.jpg">
                     </div>              
                 </a>
                 <a class="card-link" href="#">
                     <p class="card-link-label">ZERO HUNGER</p>
                     <div class="card-link-image">
                         <div class="card-overlay"></div>
-                        <img src="./assets/hope-sdg2.svg">
+                        <img src="./assets/hope-sdg2.jpg">
                     </div>  
                 </a>
                 <a class="card-link" href="#">
                     <p class="card-link-label">HEALTHIER LIVES</p>
                     <div class="card-link-image">
                         <div class="card-overlay"></div>
-                        <img src="./assets/hope-sdg3.svg">
+                        <img src="./assets/hope-sdg3.jpg">
                     </div>  
                 </a>
                 <a class="card-link" href="#">
                     <p class="card-link-label">QUALITY EDUCATION</p>
                     <div class="card-link-image">
                         <div class="card-overlay"></div>
-                        <img src="./assets/hope-sdg4.svg">
+                        <img src="./assets/hope-sdg4.jpg">
                     </div>  
                 </a>
                 <a class="card-link" href="#">
                     <p class="card-link-label">GENDER EQUALITY</p>
                     <div class="card-link-image">
                         <div class="card-overlay"></div>
-                        <img src="./assets/hope-sdg5.svg">
+                        <img src="./assets/hope-sdg5.jpg">
                     </div>  
                 </a>
                 <a class="card-link" href="#">
                     <p class="card-link-label">CLEANER WATERS</p>
                     <div class="card-link-image">
                         <div class="card-overlay"></div>
-                        <img src="./assets/hope-sdg6.svg">
+                        <img src="./assets/hope-sdg6.jpg">
                     </div>  
                 </a>
                 <a class="card-link" href="#">
                     <p class="card-link-label">RENEWABLE ENERGY</p>
                     <div class="card-link-image">
                         <div class="card-overlay"></div>
-                        <img src="./assets/hope-sdg7.svg">
+                        <img src="./assets/hope-sdg7.jpg">
                     </div>  
                 </a>
                 <a class="card-link" href="#">
