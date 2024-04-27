@@ -43,9 +43,11 @@ ul {
 
 body {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     margin: 0px;
     background-color: var(--black);
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .navbar {
@@ -81,7 +83,53 @@ body {
     background-image: url(../assets/hope-logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
+
 }
+
+main {
+    display: grid;
+    height: calc(100vh - 10vmin);
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+main>div {
+    background-color: var(--gray);
+    border-style: solid;
+    border-color: var(--black);
+}
+
+.hero {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    grid-row-end: 5;
+}
+
+.web-info1 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.web-info2 {
+    grid-column-start: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.donate-btn {
+    grid-column-start: 3;
+    grid-row-start: 4;
+    grid-column-end: 5;
+}
+
+
+
+
+
+
 
 
 

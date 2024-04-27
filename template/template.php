@@ -25,28 +25,28 @@
     <main>
         <div class="hero">
             <div class="hero-elements">
-
+                TEST HERO
             </div>
         </div>
 
         <div class="web-info1">
             <div class="web-title1">
-
+                TEST WEB1
             </div>
             <div class="web-desc1">
-
+                TEST WEBDESC1
             </div>
         </div>
         <div class="web-info2">
             <div class="web-title2">
-
+                TEST WEB2
             </div>
             <div class="web-desc2">
-
+                TEST WEBDESC2
             </div>
         </div>
         <div class="donate-btn">
-
+                TEST DONATE
         </div>
     </main>
 </body>
