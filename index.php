@@ -13,7 +13,7 @@
         session_start();
     
     ?>
-    <body data-card="false">
+    <body>
 
         <nav class="navbar">
             <div class="nav-icon">
@@ -22,7 +22,7 @@
                 <ul class="nav-list">
                     <li><a href="">Home</a></li>
                     <li><a href="">About Us</a></li>
-                    <li><a onclick="toggleCard()">Get Involved</a></li>
+                    <li><a>Get Involved</a></li>
                 </ul>
             </div>
         </nav>

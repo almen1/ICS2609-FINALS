@@ -46,6 +46,7 @@ body {
     width: 100vw;
     margin: 0px;
     background-color: var(--black);
+    overflow: scroll;
 }
 
 main {
@@ -121,19 +122,13 @@ main>.hero-title {
 
 }
 
-body[data-card="true"]>main {
-    transform: translateY(-50%);
-}
-
 .container {
-    height: calc(50vh - 10vmin);
+    height: 50vh;
     width: 100%;
     position: absolute;
     left: 0px;
     bottom: 0px;
     z-index: 1;
-    overflow-y: hidden;
-    overflow-x: scroll;
 }
 
 #card-track {
