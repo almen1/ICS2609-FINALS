@@ -140,7 +140,7 @@ main>.hero-title {
 }
 
 .hero-title>h1 {
-    font-weight: 200;
+    font-weight: 500;
     font-size: clamp(5rem, 10vw, 15rem);
     color: var(--white);
     margin: 0;
@@ -149,7 +149,7 @@ main>.hero-title {
 .hero-title>h2 {
     font-weight: 200;
     font-size: clamp(1.35rem, 3vw, 5rem);
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
     color: var(--white);
     margin: 0 0.2em;
     transform: translateY(-70%);
@@ -162,37 +162,60 @@ main>.hero-title {
     align-items: center;
     justify-content: center;
     height: 50vh;
-    width: 100vw;
+    min-width: 100%;
     z-index: -1;
     margin: 5em 0;
 }
 
-/* .card-track {
-    position: relative;
-    bottom: 50%;
-} */
-
-.card-set {
-    /* position: absolute; */
-    display: flex;
-    justify-content: space-evenly;
-    height: max(45vh, 45vh);
-    margin: 0;
-    gap: 2em;
-    background-color: pink;
+.card-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 26%;
+    min-height: 100%;
+    padding: 0 5em;
+    gap: 3em;
+    overflow-x: scroll;
+    overscroll-behavior-inline: contain;
 }
 
-.card-set>.card-link {
+.scroll-snap {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 5em;
+}
+
+.scroll-snap > * {
+    scroll-snap-align: start;
+}
+
+.card-track::-webkit-scrollbar {
+    background-color: transparent;
+    width: 15px;
+}
+
+.card-track::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.card-track::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 4px solid transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-clip: content-box;
+    margin: 0 2em;
+}
+
+
+.card-track>.card-link {
     position: relative;
     z-index: 0;
     background-color: var(--black);
-    aspect-ratio: 5/4;
-    box-shadow: -1px 15px 75px -8px rgba(0, 0, 0, 0.75);
+    aspect-ratio: 10/11;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
     transform: scale(0.94);
 }
 
-.card-set>.card-link:hover {
+.card-track>.card-link:hover {
     transform: scale(1);
 }
 
@@ -202,7 +225,7 @@ main>.hero-title {
     margin: 0.4em;
     text-decoration: none;
     color: var(--white);
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 300;
     z-index: 1;
 }
@@ -232,6 +255,71 @@ main>.hero-title {
 
 .card-link:nth-child(3) .card-overlay {
     background-color: var(--sdg3);
+}
+
+.card-link:nth-child(4) .card-overlay {
+    background-color: var(--sdg4);
+}
+
+.card-link:nth-child(5) .card-overlay {
+    background-color: var(--sdg5);
+}
+
+.card-link:nth-child(6) .card-overlay {
+    background-color: var(--sdg6);
+}
+
+.card-link:nth-child(7) .card-overlay {
+    background-color: var(--sdg7);
+}
+
+.card-link:nth-child(8) .card-overlay {
+    background-color: var(--sdg8);
+}
+
+.card-link:nth-child(9) .card-overlay {
+    background-color: var(--sdg9);
+}
+
+.card-link:nth-child(10) .card-overlay {
+    background-color: var(--sdg12);
+}
+
+.card-link:nth-child(11) .card-overlay {
+    background-color: var(--sdg11);
+}
+
+.card-link:nth-child(12) .card-overlay {
+    background-color: var(--sdg12);
+}
+
+.card-link:nth-child(13) .card-overlay {
+    background-color: var(--sdg13);
+}
+
+.card-link:nth-child(14) .card-overlay {
+    background-color: var(--sdg14);
+}
+
+.card-link:nth-child(15) .card-overlay {
+    background-color: var(--sdg15);
+}
+
+.card-link:nth-child(16) .card-overlay {
+    background-color: var(--sdg16);
+}
+
+.card-link:nth-child(17) .card-overlay {
+    background-color: var(--sdg17);
+}
+
+.card-btn {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    gap: 50em;
+    bottom: -5%;
 }
 
 .aboutus {

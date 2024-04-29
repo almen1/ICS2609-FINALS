@@ -24,7 +24,7 @@ session_start();
                 <li><a href="">About Us</a></li>
                 <li><a href="">Contact Us</a></li>
             </ul>
-            <button>Get Involed</button>
+            <button>Get Involved</button>
         </div>
     </nav>
 
@@ -36,24 +36,92 @@ session_start();
     </main>
 
     <div class="container">
-        <div class="card-track">
-            <div class="card-set" data-index="0" data-status="active">
-                <a class="card-link" href="./template/template.php">
-                    <p class="card-link-label">NO <br />POVERTY</p>
-                    <img class="card-img" src="./assets/hope-sdg1.jpg">
-                    <div class="card-overlay"></div>
-                </a>
-                <a class="card-link" href="#">
-                    <p class="card-link-label">ZERO <br />HUNGER</p>
-                    <img class="card-img" src="./assets/hope-sdg2.jpg">
-                    <div class="card-overlay"></div>
-                </a>
-                <a class="card-link" href="#">
-                    <p class="card-link-label">HEALTHY <br />LIVING</p>
-                    <img class="card-img" src="./assets/hope-sdg3.jpg">
-                    <div class="card-overlay"></div>
-                </a>
-            </div>
+        <div class="card-track scroll-snap">
+            <a class="card-link" href="./template/template.php">
+                <p class="card-link-label">ZERO <br />POVERTY</p>
+                <img class="card-img" src="./assets/hope-sdg1.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">HUNGER <br />RELIEF</p>
+                <img class="card-img" src="./assets/hope-sdg2.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">HEALTH <br />ACCESS</p>
+                <img class="card-img" src="./assets/hope-sdg3.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">EDUCATION <br />EQUITY</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">GENDER <br />EMPOWERMENT</p>
+                <img class="card-img" src="./assets/hope-sdg5.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">WATER <br />SECURITY</p>
+                <img class="card-img" src="./assets/hope-sdg6.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">ENERGY <br />ACCESSIBILITY</p>
+                <img class="card-img" src="./assets/hope-sdg7.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">JOB <br />OPPORTUNITIES</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">INNOVATION <br />SUPPORT</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">SOCIAL <br />INCLUSION</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">URBAN <br />SUSTAINABILITY</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">ETHICAL <br />CONSUMPTION</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">CLIMATE <br />ACTION</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">MARINE <br />CONSERVATION</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">LAND <br />PRESERVATION</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">SOCIAL <br />EQUITY</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
+            <a class="card-link" href="#">
+                <p class="card-link-label">COLLABORATIVE <br />IMPACT</p>
+                <img class="card-img" src="./assets/hope-sdg4.jpg">
+                <div class="card-overlay"></div>
+            </a>
         </div>
     </div>
 
