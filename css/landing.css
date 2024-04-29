@@ -1,28 +1,34 @@
 :root {
     --white: #ffffff;
     --black: #2e2e2e;
-    --gray: #e3e3e3;
-    --sdg1: #E5233D;
-    --sdg2: #DDA73A;
-    --sdg3: #4CA146;
-    --sdg4: #C7212F;
-    --sdg5: #EF402D;
-    --sdg6: #27BFE6;
-    --sdg7: #FBC412;
-    --sdg8: #A31C44;
-    --sdg9: #F26A2E;
-    --sdg10: #E01483;
-    --sdg11: #F89D2A;
-    --sdg12: #BF8D2C;
-    --sdg13: #407F46;
-    --sdg14: #1F97D4;
-    --sdg15: #59BA47;
-    --sdg16: #136A9F;
-    --sdg17: #14496B;
+    --gray: #e2e2e2;
+    --sdg1: #e5233d;
+    --sdg2: #dda73a;
+    --sdg3: #4ca146;
+    --sdg4: #c7212f;
+    --sdg5: #ef402d;
+    --sdg6: #27bfe6;
+    --sdg7: #fbc412;
+    --sdg8: #a31c44;
+    --sdg9: #f26a2e;
+    --sdg10: #e01483;
+    --sdg11: #f89d2a;
+    --sdg12: #bf8d2c;
+    --sdg13: #407f46;
+    --sdg14: #1f97d4;
+    --sdg15: #59ba47;
+    --sdg16: #136a9f;
+    --sdg17: #14496b;
 }
 
 html {
     box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 p,
@@ -39,61 +45,29 @@ ul {
     list-style: none;
     display: flex;
     text-decoration: none;
+    gap: 5em;
 }
 
 body {
     height: 100vh;
     width: 100vw;
-    margin: 0px;
-    background-color: var(--white);
+    margin: 0;
+    background-color: var(--gray);
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-main {
-    background-image: url("../assets/hope-bg.svg");
-    background-position: center 0%;
-    background-size: cover;
-    height: calc(100vh - 10vmin);
-    width: 100vw;
-    position: relative;
-    z-index: 2;
-    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-}
-
-main>.hero-title {
-    position: relative;
-    left: 5%;
-    margin: 0 0 7em 0;
-}
-
-.hero-title>h1 {
-    font-weight: 200;
-    font-size: clamp(5rem, 10vw, 15rem);
-    color: var(--white);
-    padding: 0;
-    margin: 0 0 -0.2em 0;
-}
-
-.hero-title>h2 {
-    font-weight: 200;
-    font-size: clamp(1.35rem, 3vw, 5rem);
-    letter-spacing: 0.1rem;
-    color: var(--white);
-    padding: 0;
-    margin: 0 0 0 0.2em;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: max(10vmin, 10vmin);
-    z-index: 0;
-    background-color: var(--white);
+    width: 100%;
+    z-index: 10;
+    background-color: var(--gray);
+    padding: 0 4em;
+    position: fixed;
+    top: 0;
 }
 
 .navbar a {
@@ -102,9 +76,33 @@ main>.hero-title {
     font-weight: 500;
 }
 
+.nav-elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+.nav-elements button {
+    border: none;
+    background-color: #558395;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 500;
+    width: 200px;
+    height: 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
+.nav-elements button:hover {
+    transform: scale(1.1);
+    background-color: #406270;
+}
+
 .nav-elements li {
-    margin: 0 2.5em 0 2.5em;
-    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+    transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
     cursor: pointer;
 }
 
@@ -113,8 +111,6 @@ main>.hero-title {
 }
 
 .nav-icon {
-    position: absolute;
-    left: 3%;
     width: 100px;
     height: 40px;
     background-image: url(../assets/hope-logo.svg);
@@ -122,32 +118,82 @@ main>.hero-title {
     background-size: contain;
 }
 
+main {
+    background-image: url("../assets/hope-bg.svg");
+    background-position: center top;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 0;
+    transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
+main>.hero-title {
+    position: relative;
+    left: 5%;
+    bottom: 5%;
+}
+
+.hero-title>h1 {
+    font-weight: 200;
+    font-size: clamp(5rem, 10vw, 15rem);
+    color: var(--white);
+    margin: 0;
+}
+
+.hero-title>h2 {
+    font-weight: 200;
+    font-size: clamp(1.35rem, 3vw, 5rem);
+    letter-spacing: 0.1rem;
+    color: var(--white);
+    margin: 0 0.2em;
+    transform: translateY(-70%);
+}
+
+
 .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 50vh;
     width: 100vw;
-    bottom: 0;
-    z-index: 1;
+    z-index: -1;
     margin: 5em 0;
 }
 
-.card-track {
+/* .card-track {
+    position: relative;
+    bottom: 50%;
+} */
+
+.card-set {
+    /* position: absolute; */
     display: flex;
     justify-content: space-evenly;
-    width: 100vw;
     height: max(45vh, 45vh);
+    margin: 0;
+    gap: 2em;
+    background-color: pink;
 }
 
-.card-track>.card-link {
+.card-set>.card-link {
     position: relative;
     z-index: 0;
     background-color: var(--black);
     aspect-ratio: 5/4;
-    box-shadow: -1px 15px 75px -8px rgba(0,0,0,0.75);
-    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+    box-shadow: -1px 15px 75px -8px rgba(0, 0, 0, 0.75);
+    transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+    transform: scale(0.94);
 }
 
-.card-link:hover {
-    transform: scale(1.1);
+.card-set>.card-link:hover {
+    transform: scale(1);
 }
 
 .card-link>p {
@@ -158,55 +204,34 @@ main>.hero-title {
     color: var(--white);
     font-size: 3.5rem;
     font-weight: 300;
-    z-index: 2;
+    z-index: 1;
+}
+
+.card-link>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-link .card-overlay {
+    opacity: 0.35;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
 }
 
 .card-link:nth-child(1) .card-overlay {
     background-color: var(--sdg1);
-    opacity: 0.4;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    top: 0;
 }
 
 .card-link:nth-child(2) .card-overlay {
     background-color: var(--sdg2);
-    opacity: 0.4;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    top: 0;
 }
 
 .card-link:nth-child(3) .card-overlay {
     background-color: var(--sdg3);
-    opacity: 0.4;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-}
-
-.card-track .card-link:nth-child(1) {
-    background-image: url(../assets/hope-sdg1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.card-track .card-link:nth-child(2) {
-    background-image: url(../assets/hope-sdg2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.card-track .card-link:nth-child(3) {
-    background-image: url(../assets/hope-sdg3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .aboutus {
@@ -214,6 +239,3 @@ main>.hero-title {
     height: 100vh;
     background-color: pink;
 }
-
-
-
