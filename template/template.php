@@ -15,8 +15,8 @@
         </div>
         <div class="nav-elements">
             <ul class="nav-list">
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="../index.php">About Us</a></li>
+                <li><a href="../index.php#home">Home</a></li>
+                <li><a href="../index.php#about">About Us</a></li>
                 <li><a href="../index.php">Get Involved</a></li>
             </ul>
         </div>
@@ -26,6 +26,13 @@
         <div class="hero">
             <div class="hero-elements">
                 TEST HERO
+                <?php
+                session_start();
+                if(isset($_GET['link'])) {
+                    $selected_link = $_GET['link'];
+                    echo $selected_link;
+                }
+                ?>
             </div>
         </div>
 

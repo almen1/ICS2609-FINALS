@@ -47,9 +47,9 @@ session_start();
             <div>
                 <h1>Empower Change</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua. Sed elementum tempus egestas sed sed risus pretium.
+                    The choice is yours to make, as you have the power to create a
+                    significant change in the areas that matter to you the most. Your choices define the path forward,
+                    enabling you to add your piece to the puzzle and make the world a better place.
                 </p>
             </div>
         </div>
@@ -77,7 +77,7 @@ session_start();
             ?>
 
             <?php foreach ($sdgs as $label => $image): ?>
-                <a class="card-link" href="./template/template.php">
+                <a class="card-link" href="./template/template.php?link=<?php echo urlencode($label); ?>">
                     <p class="card-link-label"><?php echo $label; ?></p>
                     <img class="card-img" src="./assets/<?php echo $image; ?>">
                     <div class="card-overlay"></div>
@@ -91,15 +91,20 @@ session_start();
         <div class="about-elements">
             <h1>Our Mission</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua. Sed elementum tempus egestas sed sed risus pretium.
+                To mobilize people to take actions toward the Sustainable Development Goals (SDGs) by creating a
+                platform where they can interact with organizations that are working on each SDG. We strive for
+                facilitating worldwide governance and acting to address the most pressing global problems, one goal at a
+                time.
+
             </p>
         </div>
         <div class="about-elements">
             <h1>Our Vision</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua. Sed elementum tempus egestas sed sed risus pretium.
+                We envision a world where everyone has a chance to make a change that will positively affect the entire
+                world. Our vision is that of the community where the collaborative work done by individuals,
+                organizations, and communities make the SDGs come true, so we obtain a more sustainable, fair, and
+                prosperous world for future generations.
             </p>
         </div>
     </div>
