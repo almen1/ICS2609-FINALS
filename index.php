@@ -7,6 +7,7 @@
     <title>HOPE</title>
     <link rel="stylesheet" href="./css/landing.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script defer src="./js/app.js"></script>
 </head>
 
 <?php
@@ -31,14 +32,14 @@ session_start();
 
     <!-- HERO -->
     <main>
-        <div class="hero-title">
+        <div class="hero-title hidden">
             <h1>HOPE</h1>
             <h2>Every Act Counts</h2>
         </div>
     </main>
 
     <!-- TRACK -->
-    <div class="container">
+    <div class="container hidden">
         <div class="goal-cont">
             <div>
                 <h1>Empower Change</h1>
@@ -49,7 +50,7 @@ session_start();
                 </p>
             </div>
         </div>
-        <div class="card-track scroll-snap">
+        <div class="card-track hidden">
             <?php
             $sdgs = array(
                 "ZERO POVERTY" => "hope-sdg1.jpg",
@@ -83,7 +84,7 @@ session_start();
     </div>
 
     <!-- ABOUT US -->
-    <div class="aboutus">
+    <div class="aboutus hidden">
         <div class="about-elements">
             <h1>Our Mission</h1>
             <p>
@@ -102,9 +103,8 @@ session_start();
 
     <!-- FOOTER -->
     <footer class="footer">
-
+    
     </footer>
 
 </body>
-
 </html>

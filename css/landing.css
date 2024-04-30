@@ -21,6 +21,26 @@
     --sdg17: #14496b;
 }
 
+.hidden {
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+}
+
+.hidden:nth-child(2) {
+    opacity: 0;
+    transform: translateX(900px);
+    transition: all 1s cubic-bezier(0.13, 0.53, 0.38, 0.97);
+}
+
+.show:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 html {
     box-sizing: border-box;
 }
@@ -222,6 +242,10 @@ main>.hero-title {
     margin: 0 2em;
 }
 
+.card-track::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
 
 .card-track>.card-link {
     position: relative;
@@ -256,7 +280,7 @@ main>.hero-title {
 }
 
 .card-link .card-overlay {
-    opacity: 0.35;
+    opacity: 0.5;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -265,71 +289,71 @@ main>.hero-title {
 }
 
 .card-link:nth-child(1) .card-overlay {
-    background-color: var(--sdg1);
+    background: linear-gradient(0deg, var(--sdg1), var(--black));
 }
 
 .card-link:nth-child(2) .card-overlay {
-    background-color: var(--sdg2);
+    background: linear-gradient(0deg, var(--sdg2), var(--black));
 }
 
 .card-link:nth-child(3) .card-overlay {
-    background-color: var(--sdg3);
+    background: linear-gradient(0deg, var(--sdg3), var(--black));
 }
 
 .card-link:nth-child(4) .card-overlay {
-    background-color: var(--sdg4);
+    background: linear-gradient(0deg, var(--sdg4), var(--black));
 }
 
 .card-link:nth-child(5) .card-overlay {
-    background-color: var(--sdg5);
+    background: linear-gradient(0deg, var(--sdg5), var(--black));
 }
 
 .card-link:nth-child(6) .card-overlay {
-    background-color: var(--sdg6);
+    background: linear-gradient(0deg, var(--sdg6), var(--black));
 }
 
 .card-link:nth-child(7) .card-overlay {
-    background-color: var(--sdg7);
+    background: linear-gradient(0deg, var(--sdg7), var(--black));
 }
 
 .card-link:nth-child(8) .card-overlay {
-    background-color: var(--sdg8);
+    background: linear-gradient(0deg, var(--sdg8), var(--black));
 }
 
 .card-link:nth-child(9) .card-overlay {
-    background-color: var(--sdg9);
+    background: linear-gradient(0deg, var(--sdg9), var(--black));
 }
 
 .card-link:nth-child(10) .card-overlay {
-    background-color: var(--sdg12);
+    background: linear-gradient(0deg, var(--sdg10), var(--black));
 }
 
 .card-link:nth-child(11) .card-overlay {
-    background-color: var(--sdg11);
+    background: linear-gradient(0deg, var(--sdg11), var(--black));
 }
 
 .card-link:nth-child(12) .card-overlay {
-    background-color: var(--sdg12);
+    background: linear-gradient(0deg, var(--sdg12), var(--black));
 }
 
 .card-link:nth-child(13) .card-overlay {
-    background-color: var(--sdg13);
+    background: linear-gradient(0deg, var(--sdg13), var(--black));
 }
 
 .card-link:nth-child(14) .card-overlay {
-    background-color: var(--sdg14);
+    background: linear-gradient(0deg, var(--sdg14), var(--black));
 }
 
 .card-link:nth-child(15) .card-overlay {
-    background-color: var(--sdg15);
+    background: linear-gradient(0deg, var(--sdg15), var(--black));
 }
 
 .card-link:nth-child(16) .card-overlay {
-    background-color: var(--sdg16);
+    background: linear-gradient(0deg, var(--sdg16), var(--black));
 }
 
 .card-link:nth-child(17) .card-overlay {
-    background-color: var(--sdg17);
+    background: linear-gradient(0deg, var(--sdg17), var(--black));
 }
 
 .card-btn {
@@ -384,4 +408,10 @@ main>.hero-title {
 
 .about-elements:nth-child(2) {
     border-style: none none none solid;
+}
+
+.footer {
+    width: 100vw;
+    height: 20vmin;
+    background-color: var(--gray);
 }
