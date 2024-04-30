@@ -7,6 +7,9 @@
     <title>HOPE</title>
     <link rel="stylesheet" href="./css/landing.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="./js/app.js"></script>
 </head>
 
@@ -22,16 +25,16 @@ session_start();
         <div class="nav-icon"></div>
         <div class="nav-elements">
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact Us</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li id="donate-btn"><a href="#donate">Get Involved</a></li>
             </ul>
-            <button>Get Involved</button>
         </div>
     </nav>
 
     <!-- HERO -->
-    <main>
+    <main id="home">
         <div class="hero-title hidden">
             <h1>HOPE</h1>
             <h2>Every Act Counts</h2>
@@ -39,7 +42,7 @@ session_start();
     </main>
 
     <!-- TRACK -->
-    <div class="container hidden">
+    <div class="container hidden" id="donate">
         <div class="goal-cont">
             <div>
                 <h1>Empower Change</h1>
@@ -74,7 +77,7 @@ session_start();
             ?>
 
             <?php foreach ($sdgs as $label => $image): ?>
-                <a class="card-link" href="#">
+                <a class="card-link" href="./template/template.php">
                     <p class="card-link-label"><?php echo $label; ?></p>
                     <img class="card-img" src="./assets/<?php echo $image; ?>">
                     <div class="card-overlay"></div>
@@ -84,7 +87,7 @@ session_start();
     </div>
 
     <!-- ABOUT US -->
-    <div class="aboutus hidden">
+    <div class="aboutus hidden" id="about">
         <div class="about-elements">
             <h1>Our Mission</h1>
             <p>
@@ -102,9 +105,24 @@ session_start();
     </div>
 
     <!-- FOOTER -->
-    <footer class="footer">
-    
+    <footer class="footer" id="contact">
+        <div class="footer-elements">
+            <div class="footer-icon">
+                <img src="./assets/hope-logo-blk.svg" alt="">
+            </div>
+            <div class="contact-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="legal">
+                <p>
+                    © 2024 HOPE Philippines | All rights reserved.
+                </p>
+            </div>
+        </div>
     </footer>
 
 </body>
+
 </html>
