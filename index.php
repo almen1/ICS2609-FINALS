@@ -16,6 +16,7 @@ session_start();
 
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-icon"></div>
         <div class="nav-elements">
@@ -28,113 +29,82 @@ session_start();
         </div>
     </nav>
 
+    <!-- HERO -->
     <main>
         <div class="hero-title">
-            <h1 class="hero">HOPE</h1>
+            <h1>HOPE</h1>
             <h2>Every Act Counts</h2>
         </div>
     </main>
 
+    <!-- TRACK -->
     <div class="container">
+        <div class="goal-cont">
+            <div>
+                <h1>Empower Change</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Sed elementum tempus egestas sed sed risus pretium.
+                </p>
+            </div>
+        </div>
         <div class="card-track scroll-snap">
-            <a class="card-link" href="./template/template.php">
-                <p class="card-link-label">ZERO <br />POVERTY</p>
-                <img class="card-img" src="./assets/hope-sdg1.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">HUNGER <br />RELIEF</p>
-                <img class="card-img" src="./assets/hope-sdg2.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">HEALTH <br />ACCESS</p>
-                <img class="card-img" src="./assets/hope-sdg3.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">EDUCATION <br />EQUITY</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">GENDER <br />EMPOWERMENT</p>
-                <img class="card-img" src="./assets/hope-sdg5.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">WATER <br />SECURITY</p>
-                <img class="card-img" src="./assets/hope-sdg6.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">ENERGY <br />ACCESSIBILITY</p>
-                <img class="card-img" src="./assets/hope-sdg7.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">JOB <br />OPPORTUNITIES</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">INNOVATION <br />SUPPORT</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">SOCIAL <br />INCLUSION</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">URBAN <br />SUSTAINABILITY</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">ETHICAL <br />CONSUMPTION</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">CLIMATE <br />ACTION</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">MARINE <br />CONSERVATION</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">LAND <br />PRESERVATION</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">SOCIAL <br />EQUITY</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
-            <a class="card-link" href="#">
-                <p class="card-link-label">COLLABORATIVE <br />IMPACT</p>
-                <img class="card-img" src="./assets/hope-sdg4.jpg">
-                <div class="card-overlay"></div>
-            </a>
+            <?php
+            $sdgs = array(
+                "ZERO POVERTY" => "hope-sdg1.jpg",
+                "HUNGER RELIEF" => "hope-sdg2.jpg",
+                "HEALTH ACCESS" => "hope-sdg3.jpg",
+                "EDUCATION EQUITY" => "hope-sdg4.jpg",
+                "GENDER EMPOWERMENT" => "hope-sdg5.jpg",
+                "WATER SECURITY" => "hope-sdg6.jpg",
+                "ENERGY ACCESSIBILITY" => "hope-sdg7.jpg",
+                "JOB OPPORTUNITIES" => "hope-sdg8.jpg",
+                "INNOVATION SUPPORT" => "hope-sdg9.jpg",
+                "SOCIAL INCLUSION" => "hope-sdg10.jpg",
+                "URBAN SUSTAINABILITY" => "hope-sdg11.jpg",
+                "ETHICAL CONSUMPTION" => "hope-sdg12.jpg",
+                "CLIMATE ACTION" => "hope-sdg13.jpg",
+                "MARINE CONSERVATION" => "hope-sdg14.jpg",
+                "LAND PRESERVATION" => "hope-sdg15.jpg",
+                "SOCIAL EQUITY" => "hope-sdg16.jpg",
+                "COLLABORATIVE IMPACT" => "hope-sdg17.jpg"
+            );
+            ?>
+
+            <?php foreach ($sdgs as $label => $image): ?>
+                <a class="card-link" href="#">
+                    <p class="card-link-label"><?php echo $label; ?></p>
+                    <img class="card-img" src="./assets/<?php echo $image; ?>">
+                    <div class="card-overlay"></div>
+                </a>
+            <?php endforeach; ?>
         </div>
     </div>
 
+    <!-- ABOUT US -->
     <div class="aboutus">
-        <div class="about-elements"></div>
+        <div class="about-elements">
+            <h1>Our Mission</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Sed elementum tempus egestas sed sed risus pretium.
+            </p>
+        </div>
+        <div class="about-elements">
+            <h1>Our Vision</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Sed elementum tempus egestas sed sed risus pretium.
+            </p>
+        </div>
     </div>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+
+    </footer>
 
 </body>
-<script>
-    const toggleCard = () => {
-        document.body.dataset.card = document.body.dataset.card === "true" ? "false" : "true";
-    }
-</script>
 
 </html>

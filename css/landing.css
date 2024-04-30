@@ -158,33 +158,51 @@ main>.hero-title {
 
 .container {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 50%;
     height: 50vh;
     min-width: 100%;
     z-index: -1;
     margin: 5em 0;
 }
 
+.goal-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6em;
+}
+
+.goal-cont>div {
+    width: 600px;
+}
+
+.goal-cont>div>h1 {
+    font-weight: 700;
+    font-size: clamp(1.35rem, 3vw, 5rem);
+    color: var(--black);
+    margin: 0;
+}
+
+.goal-cont>div>p {
+    font-weight: 300;
+    color: var(--black);
+    font-size: clamp(1rem, 1vw, 5rem);
+}
+
+
 .card-track {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 26%;
+    grid-auto-columns: 40%;
     min-height: 100%;
-    padding: 0 5em;
     gap: 3em;
     overflow-x: scroll;
     overscroll-behavior-inline: contain;
-}
-
-.scroll-snap {
-    scroll-snap-type: inline mandatory;
-    scroll-padding-inline: 5em;
-}
-
-.scroll-snap > * {
-    scroll-snap-align: start;
+    scroll-behavior: smooth;
+    align-content: center;
+    padding: 2em 0;
 }
 
 .card-track::-webkit-scrollbar {
@@ -225,9 +243,10 @@ main>.hero-title {
     margin: 0.4em;
     text-decoration: none;
     color: var(--white);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 300;
     z-index: 1;
+    width: 100px;
 }
 
 .card-link>img {
@@ -325,5 +344,44 @@ main>.hero-title {
 .aboutus {
     width: 100vw;
     height: 100vh;
-    background-color: pink;
+    background-image: url(../assets/hope-aboutus.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 50%;
+    padding: 15em 12em;
+}
+
+.about-elements {
+    border-right: var(--gray);
+    border-left: var(--gray);
+    border-width: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5em 7em;
+    text-align: center;
+}
+
+.about-elements>h1 {
+    font-weight: 700;
+    font-size: clamp(1.35rem, 3vw, 5rem);
+    color: var(--white);
+    margin: 0;
+}
+
+.about-elements>p {
+    font-weight: 200;
+    color: var(--white);
+    font-size: clamp(1rem, 1vw, 5rem);
+}
+
+.about-elements:nth-child(1) {
+    border-style: none solid none none;
+}
+
+.about-elements:nth-child(2) {
+    border-style: none none none solid;
 }
