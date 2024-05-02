@@ -32,8 +32,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
+                        <h2 class="pull-left">Template Details</h2>
+                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Record</a>
                     </div>
                     <?php
                     // Include config file
@@ -50,7 +50,6 @@
                             echo "<th>Name</th>";
                             echo "<th>Description</th>";
                             echo "<th>Color</th>";
-                            echo "<th>Background</th>";
                             echo "<th>Website 1</th>";
                             echo "<th>Website 1 Description</th>";
                             echo "<th>Website 2</th>";
@@ -64,7 +63,6 @@
                                 echo "<td>" . $row['sdg_name'] . "</td>";
                                 echo "<td>" . $row['sdg_desc'] . "</td>";
                                 echo "<td>" . $row['sdg_color'] . "</td>";
-                                echo "<td>" . $row['sdg_bg'] . "</td>";
                                 echo "<td>" . $row['website_1'] . "</td>";
                                 echo "<td>" . $row['website_1_desc'] . "</td>";
                                 echo "<td>" . $row['website_2'] . "</td>";
