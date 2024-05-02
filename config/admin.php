@@ -40,7 +40,7 @@
                     require_once "config.php";
 
                     // Attempt select query execution
-                    $sql = "SELECT * FROM employees";
+                    $sql = "SELECT * FROM sdg";
                     if ($result = $mysqli->query($sql)) {
                         if ($result->num_rows > 0) {
                             echo '<table class="table table-bordered table-striped">';
@@ -48,18 +48,27 @@
                             echo "<tr>";
                             echo "<th>#</th>";
                             echo "<th>Name</th>";
-                            echo "<th>Address</th>";
-                            echo "<th>Salary</th>";
-                            echo "<th>Action</th>";
+                            echo "<th>Description</th>";
+                            echo "<th>Color</th>";
+                            echo "<th>Background</th>";
+                            echo "<th>Website 1</th>";
+                            echo "<th>Website 1 Description</th>";
+                            echo "<th>Website 2</th>";
+                            echo "<th>Website 2 Description</th>";
                             echo "</tr>";
                             echo "</thead>";
                             echo "<tbody>";
                             while ($row = $result->fetch_array()) {
                                 echo "<tr>";
                                 echo "<td>" . $row['id'] . "</td>";
-                                echo "<td>" . $row['name'] . "</td>";
-                                echo "<td>" . $row['address'] . "</td>";
-                                echo "<td>" . $row['salary'] . "</td>";
+                                echo "<td>" . $row['sdg_name'] . "</td>";
+                                echo "<td>" . $row['sdg_desc'] . "</td>";
+                                echo "<td>" . $row['sdg_color'] . "</td>";
+                                echo "<td>" . $row['sdg_bg'] . "</td>";
+                                echo "<td>" . $row['website_1'] . "</td>";
+                                echo "<td>" . $row['website_1_desc'] . "</td>";
+                                echo "<td>" . $row['website_2'] . "</td>";
+                                echo "<td>" . $row['website_2_desc'] . "</td>";
                                 echo "<td>";
                                 echo '<a href="read.php?id=' . $row['id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
                                 echo '<a href="update.php?id=' . $row['id'] . '" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
