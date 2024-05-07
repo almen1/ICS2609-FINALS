@@ -49,8 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $website2 = $input_website2;
     }
 
-
-
     $input_webDesc1 = trim($_POST["webDesc1"]);
     if (empty($input_webDesc1)) {
         $webDesc1_err = "Please enter website Description.";
