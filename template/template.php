@@ -31,6 +31,7 @@ $imageName = isset($sdgImages[$selected_link]) ? $sdgImages[$selected_link] : nu
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/template.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>HOPE</title>
     <style>
         .hero {
@@ -42,14 +43,16 @@ $imageName = isset($sdgImages[$selected_link]) ? $sdgImages[$selected_link] : nu
 </head>
 
 <body>
+
+    <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="nav-icon">
-        </div>
+        <div class="nav-icon"></div>
         <div class="nav-elements">
-            <ul class="nav-list">
+            <ul>
                 <li><a href="../index.php#home">Home</a></li>
                 <li><a href="../index.php#about">About Us</a></li>
-                <li><a href="../index.php">Get Involved</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li id="donate-btn"><a href="../index.php#donate">Get Involved</a></li>
             </ul>
         </div>
     </nav>
@@ -60,7 +63,7 @@ $imageName = isset($sdgImages[$selected_link]) ? $sdgImages[$selected_link] : nu
                 TEST HERO
                 <?php
                 session_start();
-                if(isset($_GET['link'])) {
+                if (isset($_GET['link'])) {
                     $selected_link = $_GET['link'];
                     echo $selected_link;
                 }
@@ -85,9 +88,30 @@ $imageName = isset($sdgImages[$selected_link]) ? $sdgImages[$selected_link] : nu
             </div>
         </div>
         <div class="donate-btn">
-                TEST DONATE
+            TEST DONATE
         </div>
     </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="footer-elements">
+            <div class="footer-icon">
+                <img src="../assets/hope-logo-blk.svg" alt="">
+            </div>
+            <div class="contact-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="legal">
+                <p>
+                    © 2024 HOPE Philippines | All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
+
+
 
 </html>

@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (!preg_match("/^#?[a-fA-F0-9]{6}$/", $input_sdgColor)) {
         $sdgColor_err = "Please enter a valid SDG Hex code (e.g. #FFFFFF).";
     } else {
-        $sdgColor = "#" . $input_sdgColor;
+        $sdgColor = $input_sdgColor;
     }
 
     $input_website1 = trim($_POST["website1"]);
