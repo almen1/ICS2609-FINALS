@@ -23,7 +23,6 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 $webDesc1 = $row['website_1_desc'];
                 $website2 = $row['website_2'];
                 $webDesc2 = $row['website_2_desc'];
-
             } else {
                 header("location: error.php");
                 exit();
