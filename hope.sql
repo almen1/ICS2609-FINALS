@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2024 at 07:32 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: May 02, 2024 at 03:22 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,6 @@ CREATE TABLE `sdg` (
   `sdg_name` varchar(255) NOT NULL,
   `sdg_desc` text NOT NULL,
   `sdg_color` varchar(6) NOT NULL,
-  `sdg_bg` varchar(255) NOT NULL,
   `website_1` varchar(255) NOT NULL,
   `website_1_desc` text NOT NULL,
   `website_2` varchar(255) NOT NULL,
