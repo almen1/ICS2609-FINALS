@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <script defer src="./js/app.js"></script> -->
+    <script defer src="./js/app.js"></script>
 </head>
 
 <?php
@@ -56,23 +56,23 @@ session_start();
         <div class="card-track hidden">
             <?php
             $sdgs = array(
-                "ZERO POVERTY" => "hope-sdg1.jpg",
-                "HUNGER RELIEF" => "hope-sdg2.jpg",
-                "HEALTH ACCESS" => "hope-sdg3.jpg",
-                "EDUCATION EQUITY" => "hope-sdg4.jpg",
-                "GENDER EMPOWERMENT" => "hope-sdg5.jpg",
-                "WATER SECURITY" => "hope-sdg6.jpg",
-                "ENERGY ACCESSIBILITY" => "hope-sdg7.jpg",
-                "JOB OPPORTUNITIES" => "hope-sdg8.jpg",
-                "INNOVATION SUPPORT" => "hope-sdg9.jpg",
-                "SOCIAL INCLUSION" => "hope-sdg10.jpg",
-                "URBAN SUSTAINABILITY" => "hope-sdg11.jpg",
-                "ETHICAL CONSUMPTION" => "hope-sdg12.jpg",
-                "CLIMATE ACTION" => "hope-sdg13.jpg",
-                "MARINE CONSERVATION" => "hope-sdg14.jpg",
-                "LAND PRESERVATION" => "hope-sdg15.jpg",
-                "SOCIAL EQUITY" => "hope-sdg16.jpg",
-                "COLLABORATIVE IMPACT" => "hope-sdg17.jpg"
+                "ZERO POVERTY" => "hope-sdg1.svg",
+                "HUNGER RELIEF" => "hope-sdg2.svg",
+                "HEALTH ACCESS" => "hope-sdg3.svg",
+                "EDUCATION EQUITY" => "hope-sdg4.svg",
+                "GENDER EMPOWERMENT" => "hope-sdg5.svg",
+                "WATER SECURITY" => "hope-sdg6.svg",
+                "ENERGY ACCESSIBILITY" => "hope-sdg7.svg",
+                "JOB OPPORTUNITIES" => "hope-sdg8.svg",
+                "INNOVATION SUPPORT" => "hope-sdg9.svg",
+                "SOCIAL INCLUSION" => "hope-sdg10.svg",
+                "URBAN SUSTAINABILITY" => "hope-sdg11.svg",
+                "ETHICAL CONSUMPTION" => "hope-sdg12.svg",
+                "CLIMATE ACTION" => "hope-sdg13.svg",
+                "MARINE CONSERVATION" => "hope-sdg14.svg",
+                "LAND PRESERVATION" => "hope-sdg15.svg",
+                "SOCIAL EQUITY" => "hope-sdg16.svg",
+                "COLLABORATIVE IMPACT" => "hope-sdg17.svg"
             );
             ?>
 
