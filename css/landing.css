@@ -20,7 +20,7 @@
     --sdg16: #136a9f;
     --sdg17: #14496b;
 }
-
+/* 
 .hidden {
     opacity: 0;
     transition: all 0.8s ease-in-out;
@@ -39,7 +39,7 @@
 .show:nth-child(2) {
     opacity: 1;
     transform: translateX(0);
-}
+} */
 
 html {
     box-sizing: border-box;
