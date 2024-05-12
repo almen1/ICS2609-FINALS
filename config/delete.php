@@ -22,7 +22,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     $mysqli->close();
 } else {
     if (empty(trim($_GET["id"]))) {
-        header("location: error.php");
+        header("location: admin.php");
         exit();
     }
 }

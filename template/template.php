@@ -34,8 +34,10 @@ if ($sdgId) {
                 $row = $result->fetch_assoc();
                 $sdgColor = $row['sdg_color'];
                 $website1 = $row['website_1'];
+                $webURL1 = $row['website_1_url'];
                 $webDesc1 = $row['website_1_desc'];
                 $website2 = $row['website_2'];
+                $webURL2 = $row['website_2_url'];
                 $webDesc2 = $row['website_2_desc'];
             }
         }
@@ -74,6 +76,7 @@ $imageName = $sdgImages[$selectedLink] ?? null;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/hope-favicon.svg">
     <link rel="stylesheet" href="../css/template.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -173,14 +176,16 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                     <h1><?php echo $website1; ?></h1>
                     <p><?php echo $webDesc1; ?></p>
                 </div>
-                <button class="visit-btn">Visit Now</button>
+                <button class="visit-btn" onclick="window.open('<?php echo $webURL1?>')" class="visit-btn">Visit
+                    Now</button>
             </div>
             <div class="box item2">
                 <div class="item-text">
                     <h1><?php echo $website2; ?></h1>
                     <p><?php echo $webDesc2; ?></p>
                 </div>
-                <button class="visit-btn">Visit Now</button>
+                <button class="visit-btn" onclick="window.open('<?php echo $webURL2?>')" class="visit-btn">Visit
+                    Now</button>
             </div>
             <div class="box item3"></div>
         </div>
