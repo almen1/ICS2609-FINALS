@@ -11,8 +11,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         .wrapper {
-            width: 600px;
+            width: 100%;
             margin: 0 auto;
+            padding: 2em 10em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         table tr td:last-child {
@@ -51,8 +55,10 @@
                             echo "<th>Description</th>";
                             echo "<th>Color</th>";
                             echo "<th>Website 1</th>";
+                            echo "<th>Website 1 URL</th>";
                             echo "<th>Website 1 Description</th>";
                             echo "<th>Website 2</th>";
+                            echo "<th>Website 2 URL</th>";
                             echo "<th>Website 2 Description</th>";
                             echo "</tr>";
                             echo "</thead>";
@@ -64,8 +70,10 @@
                                 echo "<td>" . $row['sdg_desc'] . "</td>";
                                 echo "<td>" . $row['sdg_color'] . "</td>";
                                 echo "<td>" . $row['website_1'] . "</td>";
+                                echo "<td>" . $row['website_1_url'] . "</td>";
                                 echo "<td>" . $row['website_1_desc'] . "</td>";
                                 echo "<td>" . $row['website_2'] . "</td>";
+                                echo "<td>" . $row['website_2_url'] . "</td>";
                                 echo "<td>" . $row['website_2_desc'] . "</td>";
                                 echo "<td>";
                                 echo '<a href="read.php?id=' . $row['id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';

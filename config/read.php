@@ -20,8 +20,10 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 $sdgDesc = $row['sdg_desc'];
                 $sdgColor = $row['sdg_color'];
                 $website1 = $row['website_1'];
+                $web1URL = $row['website_1_url'];
                 $webDesc1 = $row['website_1_desc'];
                 $website2 = $row['website_2'];
+                $web2URL = $row['website_2_url'];
                 $webDesc2 = $row['website_2_desc'];
             } else {
                 header("location: error.php");
@@ -76,7 +78,11 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                     </div>
                     <div class="form-group">
                         <label>Website 1 Name</label>
-                        <p><b><?php echo $row['website_1'];; ?></b></p>
+                        <p><b><?php echo $row['website_1']; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Website 1 URL</label>
+                        <p><b><?php echo $row['website_1_url']; ?></b></p>
                     </div>
                     <div class="form-group">
                         <label>Website 1 Description</label>
@@ -85,6 +91,10 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                     <div class="form-group">
                         <label>Website 2 Name</label>
                         <p><b><?php echo $row['website_2']; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Website 2 URL</label>
+                        <p><b><?php echo $row['website_2_url']; ?></b></p>
                     </div>
                     <div class="form-group">
                         <label>Website 2 Description</label>
