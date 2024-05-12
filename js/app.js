@@ -12,3 +12,11 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el)=> observer.observe(el));
 
+function scrollToForm() {
+    var formElement = document.getElementById('form');
+    var targetScrollPosition = formElement.offsetTop - 0.1 * window.innerHeight;
+    window.scrollTo({
+        top: targetScrollPosition,
+        behavior: 'smooth'
+    });
+}

@@ -128,7 +128,7 @@ body {
 
 #donate-btn:hover {
     transform: scale(1.1);
-    background-color: #406270;
+    filter: brightness(85%);
 }
 
 .nav-elements li {

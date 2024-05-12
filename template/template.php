@@ -80,6 +80,7 @@ $imageName = $sdgImages[$selectedLink] ?? null;
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <script defer src="../js/app.js"></script>
     <title>HOPE</title>
     <style>
         main>.overlay {
@@ -92,13 +93,13 @@ $imageName = $sdgImages[$selectedLink] ?? null;
             background: linear-gradient(0deg, #<?php echo $sdgColor; ?>, var(--black));
         }
 
+        #donate-btn {
+            background-color: #<?php echo $sdgColor; ?>;
+        }
+
         button {
-            background-color:
-                <?php echo "#" . $sdgColor ?>;
+            background-color: #<?php echo $sdgColor; ?>;
             padding: 0.6em 2.2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             border: none;
             border-radius: 25px;
             cursor: pointer;
@@ -106,11 +107,12 @@ $imageName = $sdgImages[$selectedLink] ?? null;
             font-size: 1.25rem;
             font-family: "Inter", sans-serif;
             font-weight: 500;
-            transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+            transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97), filter 300ms;
         }
 
         button:hover {
             transform: scale(1.1);
+            filter: brightness(85%);
         }
     </style>
 </head>
@@ -125,7 +127,7 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                 <li><a href="../index.php#home">Home</a></li>
                 <li><a href="../index.php#about">About Us</a></li>
                 <li><a href="#contact">Contact Us</a></li>
-                <li id="donate-btn"><a href="../index.php#donate">Get Involved</a></li>
+                <li id="donate-btn"><a href="../index.php#donate">See More</a></li>
             </ul>
         </div>
     </nav>
@@ -146,12 +148,12 @@ $imageName = $sdgImages[$selectedLink] ?? null;
     <section id="form">
         <div class="container">
             <div class="box item1">
-                <p>Website 1: <?php echo $website1; ?></p>
-                <p>Website 1 Description: <?php echo $webDesc1; ?></p>
+                <p><?php echo $website1; ?></p>
+                <p><?php echo $webDesc1; ?></p>
             </div>
             <div class="box item2">
-                <p>Website 2: <?php echo $website2; ?></p>
-                <p>Website 2 Description: <?php echo $webDesc2; ?></p>
+                <p><?php echo $website2; ?></p>
+                <p><?php echo $webDesc2; ?></p>
             </div>
             <div class="box item3"></div>
         </div>
@@ -174,15 +176,5 @@ $imageName = $sdgImages[$selectedLink] ?? null;
         </div>
     </footer>
 </body>
-<script>
-        function scrollToForm() {
-            var formElement = document.getElementById('form');
-            var targetScrollPosition = formElement.offsetTop - 0.1 * window.innerHeight;
-            window.scrollTo({
-                top: targetScrollPosition,
-                behavior: 'smooth'
-            });
-        }
-    </script>
 
 </html>

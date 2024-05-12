@@ -92,7 +92,6 @@ body {
 }
 
 #donate-btn {
-    background-color: #558395;
     padding: 0.5em 2em;
     display: flex;
     justify-content: center;
@@ -108,7 +107,7 @@ body {
 
 #donate-btn:hover {
     transform: scale(1.1);
-    background-color: #406270;
+    filter: brightness(85%);
 }
 
 .nav-elements li {
@@ -173,7 +172,6 @@ main>img {
 section {
     width: 100vw;
     height: calc(100vh - 10vmin);
-    background-color: pink;
 }
 
 .container {
@@ -187,7 +185,7 @@ section {
 }
 
 .box {
-    background-color: red;
+    background-color: pink;
 }
 
 .item1 {
