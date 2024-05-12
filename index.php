@@ -122,7 +122,7 @@ session_start();
             </div>
             <div class="legal">
                 <p>
-                    © 2024 HOPE Philippines | All rights reserved.
+                    &copy; 2024 HOPE Philippines | All rights reserved.
                 </p>
             </div>
         </div>

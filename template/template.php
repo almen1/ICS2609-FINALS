@@ -1,5 +1,51 @@
 <?php
-$sdgImages = array(
+require_once "../config/config.php";
+
+$sdgNameToId = [
+    "ZERO POVERTY" => 1,
+    "HUNGER RELIEF" => 2,
+    "HEALTH ACCESS" => 3,
+    "EDUCATION EQUITY" => 4,
+    "GENDER EMPOWERMENT" => 5,
+    "WATER SECURITY" => 6,
+    "ENERGY ACCESSIBILITY" => 7,
+    "JOB OPPORTUNITIES" => 8,
+    "INNOVATION SUPPORT" => 9,
+    "SOCIAL INCLUSION" => 10,
+    "URBAN SUSTAINABILITY" => 11,
+    "ETHICAL CONSUMPTION" => 12,
+    "CLIMATE ACTION" => 13,
+    "MARINE CONSERVATION" => 14,
+    "LAND PRESERVATION" => 15,
+    "SOCIAL EQUITY" => 16,
+    "COLLABORATIVE IMPACT" => 17
+];
+
+$selectedLink = isset($_GET['link']) ? $_GET['link'] : null;
+$sdgId = $sdgNameToId[$selectedLink] ?? null;
+
+if ($sdgId) {
+    $sql = "SELECT * FROM sdg WHERE id = ?";
+    if ($stmt = $mysqli->prepare($sql)) {
+        $stmt->bind_param("i", $sdgId);
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_assoc();
+                $sdgColor = $row['sdg_color'];
+                $website1 = $row['website_1'];
+                $webDesc1 = $row['website_1_desc'];
+                $website2 = $row['website_2'];
+                $webDesc2 = $row['website_2_desc'];
+            }
+        }
+        $stmt->close();
+    }
+}
+
+$mysqli->close();
+
+$sdgImages = [
     "ZERO POVERTY" => "hope-sdg1.svg",
     "HUNGER RELIEF" => "hope-sdg2.svg",
     "HEALTH ACCESS" => "hope-sdg3.svg",
@@ -17,10 +63,9 @@ $sdgImages = array(
     "LAND PRESERVATION" => "hope-sdg15.svg",
     "SOCIAL EQUITY" => "hope-sdg16.svg",
     "COLLABORATIVE IMPACT" => "hope-sdg17.svg"
-);
+];
 
-$selected_link = isset($_GET['link']) ? $_GET['link'] : null;
-$imageName = isset($sdgImages[$selected_link]) ? $sdgImages[$selected_link] : null;
+$imageName = $sdgImages[$selectedLink] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -31,37 +76,19 @@ $imageName = isset($sdgImages[$selected_link]) ? $sdgImages[$selected_link] : nu
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/template.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>HOPE</title>
     <style>
-        :root {
-            --white: #ffffff;
-            --black: #2e2e2e;
-            --gray: #e2e2e2;
-            --sdg1: #e5233d;
-            --sdg2: #dda73a;
-            --sdg3: #4ca146;
-            --sdg4: #c7212f;
-            --sdg5: #ef402d;
-            --sdg6: #27bfe6;
-            --sdg7: #fbc412;
-            --sdg8: #a31c44;
-            --sdg9: #f26a2e;
-            --sdg10: #e01483;
-            --sdg11: #f89d2a;
-            --sdg12: #bf8d2c;
-            --sdg13: #407f46;
-            --sdg14: #1f97d4;
-            --sdg15: #59ba47;
-            --sdg16: #136a9f;
-            --sdg17: #14496b;
-        }
-
-        .hero {
-            background-image: url('../assets/<?php echo $imageName; ?>'), linear-gradient(0deg, rgba(229, 35, 61, 0.5), rgba(46, 46, 46, 0.5));
-            background-blend-mode: overlay;
-            background-size: cover;
-            background-repeat: no-repeat;
+        main>.overlay {
+            opacity: 0.4;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            background: linear-gradient(0deg, #<?php echo $sdgColor; ?>, var(--black));
         }
 
         button {
@@ -103,30 +130,29 @@ $imageName = isset($sdgImages[$selected_link]) ? $sdgImages[$selected_link] : nu
 
     <!-- HERO -->
     <main>
+        <div class="overlay"></div>
+        <img src="../assets/<?php echo $imageName; ?>">
         <div class="hero">
             <div>
-                <h1>
-                    <?php
-                    session_start();
-                    if (isset($_GET['link'])) {
-                        $selected_link = $_GET['link'];
-                        echo $selected_link;
-                    }
-                    ?>
-                </h1>
+                <h1><?php echo $selectedLink; ?></h1>
                 <button>Donate Now</button>
             </div>
         </div>
     </main>
-                    
+
     <section>
         <div class="container">
-            <div class="box item1"></div>
-            <div class="box item2"></div>
+            <div class="box item1">
+                <p>Website 1: <?php echo $website1; ?></p>
+                <p>Website 1 Description: <?php echo $webDesc1; ?></p>
+            </div>
+            <div class="box item2">
+                <p>Website 2: <?php echo $website2; ?></p>
+                <p>Website 2 Description: <?php echo $webDesc2; ?></p>
+            </div>
             <div class="box item3"></div>
         </div>
     </section>
-
 
     <!-- FOOTER -->
     <footer class="footer" id="contact">
@@ -140,14 +166,10 @@ $imageName = isset($sdgImages[$selected_link]) ? $sdgImages[$selected_link] : nu
                 <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="legal">
-                <p>
-                    © 2024 HOPE Philippines | All rights reserved.
-                </p>
+                <p>&copy; 2024 HOPE Philippines | All rights reserved.</p>
             </div>
         </div>
     </footer>
 </body>
-
-
 
 </html>
