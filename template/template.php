@@ -79,6 +79,7 @@ $imageName = $sdgImages[$selectedLink] ?? null;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>HOPE</title>
     <style>
         main>.overlay {
@@ -92,7 +93,8 @@ $imageName = $sdgImages[$selectedLink] ?? null;
         }
 
         button {
-            background-color: rgb(229, 35, 61);
+            background-color:
+                <?php echo "#" . $sdgColor ?>;
             padding: 0.6em 2.2em;
             display: flex;
             justify-content: center;
@@ -135,12 +137,13 @@ $imageName = $sdgImages[$selectedLink] ?? null;
         <div class="hero">
             <div>
                 <h1><?php echo $selectedLink; ?></h1>
-                <button>Donate Now</button>
+                <button class="scroll-button" onclick="scrollToForm()">Donate Now</button>
             </div>
         </div>
     </main>
 
-    <section>
+
+    <section id="form">
         <div class="container">
             <div class="box item1">
                 <p>Website 1: <?php echo $website1; ?></p>
@@ -171,5 +174,15 @@ $imageName = $sdgImages[$selectedLink] ?? null;
         </div>
     </footer>
 </body>
+<script>
+        function scrollToForm() {
+            var formElement = document.getElementById('form');
+            var targetScrollPosition = formElement.offsetTop - 0.1 * window.innerHeight;
+            window.scrollTo({
+                top: targetScrollPosition,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 
 </html>

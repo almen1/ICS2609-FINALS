@@ -10,18 +10,21 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
+
+        a,p,td,th {
+            font-size: 12px;
+        }
+
         .wrapper {
             width: 100%;
             margin: 0 auto;
-            padding: 2em 10em;
+            padding: 1em 2em;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        table tr td:last-child {
-            width: 120px;
-        }
+        
     </style>
     <script>
         $(document).ready(function() {
@@ -40,10 +43,8 @@
                         <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Record</a>
                     </div>
                     <?php
-                    // Include config file
                     require_once "config.php";
 
-                    // Attempt select query execution
                     $sql = "SELECT * FROM sdg";
                     if ($result = $mysqli->query($sql)) {
                         if ($result->num_rows > 0) {
@@ -84,7 +85,6 @@
                             }
                             echo "</tbody>";
                             echo "</table>";
-                            // Free result set
                             $result->free();
                         } else {
                             echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
@@ -93,7 +93,6 @@
                         echo "Oops! Something went wrong. Please try again later.";
                     }
 
-                    // Close connection
                     $mysqli->close();
                     ?>
                 </div>
