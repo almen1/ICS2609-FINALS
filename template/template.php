@@ -83,37 +83,58 @@ $imageName = $sdgImages[$selectedLink] ?? null;
     <script defer src="../js/app.js"></script>
     <title>HOPE</title>
     <style>
-        main>.overlay {
-            opacity: 0.4;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            z-index: 0;
-            top: 0;
-            background: linear-gradient(0deg, #<?php echo $sdgColor; ?>, var(--black));
-        }
+    main>.overlay {
+        opacity: 0.4;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        background: linear-gradient(0deg, #<?php echo $sdgColor; ?>, var(--black));
+    }
 
-        #donate-btn {
-            background-color: #<?php echo $sdgColor; ?>;
-        }
+    #donate-btn {
+        background-color: #<?php echo $sdgColor;
+        ?>;
+    }
 
-        button {
-            background-color: #<?php echo $sdgColor; ?>;
-            padding: 0.6em 2.2em;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            color: var(--white);
-            font-size: 1.25rem;
-            font-family: "Inter", sans-serif;
-            font-weight: 500;
-            transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97), filter 300ms;
-        }
+    .scroll-btn {
+        background-color: #<?php echo $sdgColor;
+        ?>;
+        padding: 0.6em 2.2em;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        color: var(--white);
+        font-size: 1.25rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97), filter 300ms;
+    }
 
-        button:hover {
-            transform: scale(1.1);
-            filter: brightness(85%);
-        }
+    .scroll-btn:hover {
+        transform: scale(1.1);
+        filter: brightness(85%);
+    }
+
+    .visit-btn {
+        background-color: #<?php echo $sdgColor;
+        ?>;
+        padding: 0.6em 2.2em;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        color: var(--white);
+        font-size: 1.25rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97), filter 300ms;
+    }
+
+    .visit-btn:hover {
+        transform: scale(1.04);
+        filter: brightness(85%);
+    }
     </style>
 </head>
 
@@ -127,7 +148,7 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                 <li><a href="../index.php#home">Home</a></li>
                 <li><a href="../index.php#about">About Us</a></li>
                 <li><a href="#contact">Contact Us</a></li>
-                <li id="donate-btn"><a href="../index.php#donate">See More</a></li>
+                <li id="donate-btn"><a href="../index.php#donate">Explore More</a></li>
             </ul>
         </div>
     </nav>
@@ -139,21 +160,27 @@ $imageName = $sdgImages[$selectedLink] ?? null;
         <div class="hero">
             <div>
                 <h1><?php echo $selectedLink; ?></h1>
-                <button class="scroll-button" onclick="scrollToForm()">Donate Now</button>
+                <button class="scroll-btn" onclick="scrollToForm()">Donate Now</button>
             </div>
         </div>
     </main>
 
-
+    <!-- FORM -->
     <section id="form">
         <div class="container">
             <div class="box item1">
-                <p><?php echo $website1; ?></p>
-                <p><?php echo $webDesc1; ?></p>
+                <div class="item-text">
+                    <h1><?php echo $website1; ?></h1>
+                    <p><?php echo $webDesc1; ?></p>
+                </div>
+                <button class="visit-btn">Visit Now</button>
             </div>
             <div class="box item2">
-                <p><?php echo $website2; ?></p>
-                <p><?php echo $webDesc2; ?></p>
+                <div class="item-text">
+                    <h1><?php echo $website2; ?></h1>
+                    <p><?php echo $webDesc2; ?></p>
+                </div>
+                <button class="visit-btn">Visit Now</button>
             </div>
             <div class="box item3"></div>
         </div>
