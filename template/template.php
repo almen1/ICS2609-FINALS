@@ -32,6 +32,7 @@ if ($sdgId) {
             $result = $stmt->get_result();
             if ($result->num_rows == 1) {
                 $row = $result->fetch_assoc();
+                $sdgDesc = $row['sdg_desc'];
                 $sdgColor = $row['sdg_color'];
                 $website1 = $row['website_1'];
                 $webURL1 = $row['website_1_url'];
@@ -163,6 +164,7 @@ $imageName = $sdgImages[$selectedLink] ?? null;
         <div class="hero">
             <div>
                 <h1><?php echo $selectedLink; ?></h1>
+                <p> <?php echo $sdgDesc; ?></p>
                 <button class="scroll-btn" onclick="scrollToForm()">Donate Now</button>
             </div>
         </div>
@@ -187,7 +189,11 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                 <button class="visit-btn" onclick="window.open('<?php echo $webURL2?>')" class="visit-btn">Visit
                     Now</button>
             </div>
-            <div class="box item3"></div>
+            <div class="box item3">
+                <?php 
+                    require_once "../config/form_create.php";                
+                ?>
+            </div>
         </div>
     </section>
 
