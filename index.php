@@ -54,7 +54,38 @@ session_start();
                 </p>
             </div>
         </div>
+        <div class="card-track hidden">
+            <?php
+            $sdgs = array(
+                "ZERO POVERTY" => "hope-sdg1.svg",
+                "HUNGER RELIEF" => "hope-sdg2.svg",
+                "HEALTH ACCESS" => "hope-sdg3.svg",
+                "EDUCATION EQUITY" => "hope-sdg4.svg",
+                "GENDER EMPOWERMENT" => "hope-sdg5.svg",
+                "WATER SECURITY" => "hope-sdg6.svg",
+                "ENERGY ACCESSIBILITY" => "hope-sdg7.svg",
+                "JOB OPPORTUNITIES" => "hope-sdg8.svg",
+                "INNOVATION SUPPORT" => "hope-sdg9.svg",
+                "SOCIAL INCLUSION" => "hope-sdg10.svg",
+                "URBAN SUSTAINABILITY" => "hope-sdg11.svg",
+                "ETHICAL CONSUMPTION" => "hope-sdg12.svg",
+                "CLIMATE ACTION" => "hope-sdg13.svg",
+                "MARINE CONSERVATION" => "hope-sdg14.svg",
+                "LAND PRESERVATION" => "hope-sdg15.svg",
+                "SOCIAL EQUITY" => "hope-sdg16.svg",
+                "COLLABORATIVE IMPACT" => "hope-sdg17.svg"
+            );
+            ?>
 
+            <?php foreach ($sdgs as $label => $image): ?>
+                <a class="card-link" href="./template/template.php?link=<?php echo urlencode($label); ?>">
+                    <p class="card-link-label"><?php echo $label; ?></p>
+                    <img class="card-img" src="./assets/<?php echo $image; ?>">
+                    <div class="card-overlay"></div>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
 
     <!-- ABOUT US -->
     <div class="aboutus hidden" id="about">
