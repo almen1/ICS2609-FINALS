@@ -139,6 +139,25 @@ $imageName = $sdgImages[$selectedLink] ?? null;
         transform: scale(1.04);
         filter: brightness(85%);
     }
+
+    .submit-btn {
+        background-color: #<?php echo $sdgColor;
+        ?>;
+        padding: 0.6em 2.2em;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        color: var(--white);
+        font-size: 1.25rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97), filter 300ms;
+    }
+
+    .submit-btn:hover {
+        transform: scale(1.04);
+        filter: brightness(85%);
+    }
     </style>
 </head>
 
@@ -190,9 +209,92 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                     Now</button>
             </div>
             <div class="box item3">
-                <?php 
-                    require_once "../config/form_create.php";                
-                ?>
+
+                <div class="wrapper">
+                    <h1>Donate Towards Development</h1>
+                    <p>Your donation fuels SDG initiatives, promoting education, healthcare, infrastructure, and
+                        economic empowerment for a brighter future.</p>
+                    <div class="table">
+                        <form action="" method="post" enctype="multipart/form-data">
+
+                            <div class="row row-1">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" name="name"
+                                        class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>"
+                                        value="<?php echo isset($name) ? $name : ''; ?>">
+                                    <!-- <span class="invalid-feedback"><?php echo $name_err; ?></span> -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Contact Information</label>
+                                    <input type="text" name="contact"
+                                        class="form-control <?php echo (!empty($contact_err)) ? 'is-invalid' : ''; ?>"
+                                        value="<?php echo isset($contact) ? $contact : ''; ?>">
+                                    <!-- <span class="invalid-feedback"><?php echo $contact_err; ?></span> -->
+                                </div>
+                            </div>
+
+                            <div class="row row-2">
+                                <div class="form-group">
+                                    <label>Amount</label>
+                                    <input type="text" name="amount"
+                                        class="form-control <?php echo (!empty($amount_err)) ? 'is-invalid' : ''; ?>"
+                                        value="<?php echo isset($amount) ? $amount : ''; ?>">
+                                    <!-- <span class="invalid-feedback"><?php echo $amount_err; ?></span> -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Payment Method</label>
+                                    <select name="payment_method"
+                                        class="form-control <?php echo (!empty($payment_method_err)) ? 'is-invalid' : ''; ?>">
+                                        <option value="">Select Payment Method</option>
+                                        <option value="Visa"
+                                            <?php if(isset($payment_method) && $payment_method == "Visa") echo "selected"; ?>>
+                                            Visa</option>
+                                        <option value="GCash"
+                                            <?php if(isset($payment_method) && $payment_method == "GCash") echo "selected"; ?>>
+                                            GCash</option>
+                                        <option value="Mastercard"
+                                            <?php if(isset($payment_method) && $payment_method == "Mastercard") echo "selected"; ?>>
+                                            Mastercard</option>
+                                    </select>
+                                    <!-- <span class="invalid-feedback"><?php echo $payment_method_err; ?></span> -->
+                                </div>
+                            </div>
+
+                            <div class="row row-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="website1" name="website1"
+                                        value="Website 1">
+                                    <label class="form-check-label" for="website1"><?php echo $website1; ?></label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="website2" name="website2"
+                                        value="Website 2">
+                                    <label class="form-check-label" for="website2"><?php echo $website2; ?></label>
+                                </div>
+
+                            </div>
+
+                            <div class="row row-4">
+                                <div class="form-group">
+                                    <label>Comments</label>
+                                    <textarea name="comments"
+                                        class="form-control <?php echo (!empty($comments_err)) ? 'is-invalid' : ''; ?>"><?php echo isset($comments) ? $comments : ''; ?></textarea>
+                                    <!-- <span class="invalid-feedback"><?php echo $comments_err; ?></span> -->
+                                </div>
+                            </div>
+
+                            <div class="row row-5">
+                                <button type="submit" class="submit-btn">Submit Donation</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
