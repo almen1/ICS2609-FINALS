@@ -209,7 +209,10 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                     Now</button>
             </div>
             <div class="box item3">
-
+                <?php 
+                require_once "../config/form_create.php";
+                
+                ?>
                 <div class="wrapper">
                     <h1>Donate Towards Development</h1>
                     <p>Your donation fuels SDG initiatives, promoting education, healthcare, infrastructure, and
@@ -234,7 +237,6 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                                     <!-- <span class="invalid-feedback"><?php echo $contact_err; ?></span> -->
                                 </div>
                             </div>
-
                             <div class="row row-2">
                                 <div class="form-group">
                                     <label>Amount</label>
@@ -243,7 +245,6 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                                         value="<?php echo isset($amount) ? $amount : ''; ?>">
                                     <!-- <span class="invalid-feedback"><?php echo $amount_err; ?></span> -->
                                 </div>
-
                                 <div class="form-group">
                                     <label>Payment Method</label>
                                     <select name="payment_method"
@@ -262,22 +263,19 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                                     <!-- <span class="invalid-feedback"><?php echo $payment_method_err; ?></span> -->
                                 </div>
                             </div>
-
                             <div class="row row-3">
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="website1" name="website1"
-                                        value="Website 1">
+                                        value="<?php echo $website1; ?>">
                                     <label class="form-check-label" for="website1"><?php echo $website1; ?></label>
                                 </div>
 
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="website2" name="website2"
-                                        value="Website 2">
+                                        value="<?php echo $website2; ?>">
                                     <label class="form-check-label" for="website2"><?php echo $website2; ?></label>
                                 </div>
-
                             </div>
-
                             <div class="row row-4">
                                 <div class="form-group">
                                     <label>Comments</label>
@@ -286,11 +284,9 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                                     <!-- <span class="invalid-feedback"><?php echo $comments_err; ?></span> -->
                                 </div>
                             </div>
-
                             <div class="row row-5">
                                 <button type="submit" class="submit-btn">Submit Donation</button>
                             </div>
-
                         </form>
                     </div>
                 </div>

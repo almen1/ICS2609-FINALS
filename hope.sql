@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2024 at 03:19 PM
+-- Generation Time: May 13, 2024 at 05:22 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `hope`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donation_form`
+--
+
+CREATE TABLE `donation_form` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `contact_info` varchar(255) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `payment_method` varchar(255) NOT NULL,
+  `option_1` varchar(255) NOT NULL,
+  `option_2` varchar(255) NOT NULL,
+  `comments` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -68,6 +85,12 @@ INSERT INTO `sdg` (`id`, `sdg_name`, `sdg_desc`, `sdg_color`, `website_1`, `webs
 --
 
 --
+-- Indexes for table `donation_form`
+--
+ALTER TABLE `donation_form`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sdg`
 --
 ALTER TABLE `sdg`
@@ -76,6 +99,12 @@ ALTER TABLE `sdg`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `donation_form`
+--
+ALTER TABLE `donation_form`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sdg`
