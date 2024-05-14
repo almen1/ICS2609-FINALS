@@ -24,7 +24,10 @@ session_start();
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-icon"></div>
-        <div class="nav-elements">
+        <div class="burger-menu" id="burger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-elements" id="nav-elements">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
@@ -78,11 +81,11 @@ session_start();
             ?>
 
             <?php foreach ($sdgs as $label => $image): ?>
-                <a class="card-link" href="./template/template.php?link=<?php echo urlencode($label); ?>">
-                    <p class="card-link-label"><?php echo $label; ?></p>
-                    <img class="card-img" src="./assets/<?php echo $image; ?>">
-                    <div class="card-overlay"></div>
-                </a>
+            <a class="card-link" href="./template/template.php?link=<?php echo urlencode($label); ?>">
+                <p class="card-link-label"><?php echo $label; ?></p>
+                <img class="card-img" src="./assets/<?php echo $image; ?>">
+                <div class="card-overlay"></div>
+            </a>
             <?php endforeach; ?>
         </div>
     </div>
@@ -128,7 +131,16 @@ session_start();
             </div>
         </div>
     </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const burgerMenu = document.getElementById('burger-menu');
+    const navElements = document.getElementById('nav-elements');
 
+    burgerMenu.addEventListener('click', function() {
+        navElements.classList.toggle('show');
+    });
+});
+    </script>
 </body>
 
 </html>
