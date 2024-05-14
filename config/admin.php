@@ -128,6 +128,8 @@ function displayDonationDetails() {
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
     $(document).ready(function() {
+        $("#sdg-details").show();
+        
         $("#sdg-nav").click(function() {
             $("#sdg-details").show();
             $("#donation-details").hide();
