@@ -22,9 +22,9 @@ session_start();
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
+    <nav class="navbar" data-nav="false">
         <div class="nav-icon"></div>
-        <div class="burger-menu" id="burger-menu">
+        <div class="burger-menu" id="burger-menu" onclick="toggleNav()">
             <i class="fas fa-bars"></i>
         </div>
         <div class="nav-elements" id="nav-elements">
@@ -132,14 +132,13 @@ session_start();
         </div>
     </footer>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const burgerMenu = document.getElementById('burger-menu');
+    function toggleNav() {
+    const nav = document.querySelector('nav.navbar');
     const navElements = document.getElementById('nav-elements');
 
-    burgerMenu.addEventListener('click', function() {
-        navElements.classList.toggle('show');
-    });
-});
+    navElements.classList.toggle('show');
+    nav.dataset.nav = (nav.dataset.nav === "true") ? "false" : "true";
+}
     </script>
 </body>
 

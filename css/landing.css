@@ -78,7 +78,7 @@ body {
     overflow-x: hidden;
 }
 
-.navbar {
+.navbar[data-nav="false"] {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -226,7 +226,7 @@ main>.hero-title {
 .goal-cont>div>p {
     font-weight: 300;
     color: var(--black);
-    font-size: clamp(1rem, 1vw, 5rem);
+    font-size: clamp(0.75rem, 1vw, 5rem);
 }
 
 
@@ -421,7 +421,7 @@ main>.hero-title {
 .about-elements>p {
     font-weight: 200;
     color: var(--white);
-    font-size: clamp(1rem, 1vw, 5rem);
+    font-size: clamp(0.75rem, 1vw, 5rem);
 }
 
 .about-elements:nth-child(1) {
@@ -493,21 +493,40 @@ main>.hero-title {
         width: max(100svw 100svw);
     }
 
-    .navbar {
+    .navbar[data-nav="false"] {
         padding: 1em;
         height: auto;
     }
 
-    .nav-elements {
+    .navbar[data-nav="false"]>.nav-elements {
         display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1em;
-        width: 100%;
     }
 
-    .nav-elements.show {
-        display: flex;
+    .navbar[data-nav="true"] {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: 1fr 1fr;
+        padding: 1em;
+        align-items: center;
+    }
+
+    .navbar[data-nav="true"]>.burger-menu{
+        justify-self: right;
+    }
+
+    .navbar[data-nav="true"]>.nav-elements {
+        gap: 0em;
+        padding: 0;
+        margin: 0;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .navbar[data-nav="true"]>.nav-elements>ul {
+        gap: 0em;
+        padding: 0;
+        margin: 0;
+        background-color: pink;
     }
 
     .burger-menu {
@@ -516,20 +535,22 @@ main>.hero-title {
     }
 
     .nav-elements>ul {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
         width: 100%;
     }
 
     .nav-elements li {
         width: 100%;
-        text-align: left;
+        text-align: center;
         padding: 0.5em 0;
     }
 
     #donate-btn {
-        width: 100%;
-        justify-content: flex-start;
+        transform: scale(0.75);
+        justify-content: center;
         padding: 0.5em 1em;
     }
 
