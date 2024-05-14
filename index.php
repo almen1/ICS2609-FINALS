@@ -133,12 +133,12 @@ session_start();
     </footer>
     <script>
     function toggleNav() {
-    const nav = document.querySelector('nav.navbar');
-    const navElements = document.getElementById('nav-elements');
+        const nav = document.querySelector('nav.navbar');
+        const navElements = document.getElementById('nav-elements');
 
-    navElements.classList.toggle('show');
-    nav.dataset.nav = (nav.dataset.nav === "true") ? "false" : "true";
-}
+        navElements.classList.toggle('show');
+        nav.dataset.nav = (nav.dataset.nav === "true") ? "false" : "true";
+    }
     </script>
 </body>
 

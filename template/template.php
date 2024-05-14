@@ -158,15 +158,39 @@ $imageName = $sdgImages[$selectedLink] ?? null;
         transform: scale(1.04);
         filter: brightness(85%);
     }
+
+    @media only screen and (max-width: 600px) {
+
+        .scroll-btn {
+            padding: 0.6em 2.2em;
+            font-size: 0.75rem;
+        }
+
+        .visit-btn {
+            background-color: #<?php echo $sdgColor;
+            ?>;
+            padding: 0.6em 2.2em;
+            font-size: 0.75rem;
+        }
+
+        .submit-btn {
+            padding: 0.6em 2.2em;
+            font-size: 0.75rem;
+        }
+
+    }
     </style>
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
+    <nav class="navbar" data-nav="false">
         <div class="nav-icon"></div>
-        <div class="nav-elements">
+        <div class="burger-menu" id="burger-menu" onclick="toggleNav()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-elements" id="nav-elements">
             <ul>
                 <li><a href="../index.php#home">Home</a></li>
                 <li><a href="../index.php#about">About Us</a></li>
@@ -226,7 +250,6 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                                     <input type="text" name="name"
                                         class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>"
                                         value="<?php echo isset($name) ? $name : ''; ?>">
-                                    <!-- <span class="invalid-feedback"><?php echo $name_err; ?></span> -->
                                 </div>
 
                                 <div class="form-group">
@@ -234,7 +257,6 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                                     <input type="text" name="contact"
                                         class="form-control <?php echo (!empty($contact_err)) ? 'is-invalid' : ''; ?>"
                                         value="<?php echo isset($contact) ? $contact : ''; ?>">
-                                    <!-- <span class="invalid-feedback"><?php echo $contact_err; ?></span> -->
                                 </div>
                             </div>
                             <div class="row row-2">
@@ -243,7 +265,6 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                                     <input type="text" name="amount"
                                         class="form-control <?php echo (!empty($amount_err)) ? 'is-invalid' : ''; ?>"
                                         value="<?php echo isset($amount) ? $amount : ''; ?>">
-                                    <!-- <span class="invalid-feedback"><?php echo $amount_err; ?></span> -->
                                 </div>
                                 <div class="form-group">
                                     <label>Payment Method</label>
@@ -260,7 +281,6 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                                             <?php if(isset($payment_method) && $payment_method == "Mastercard") echo "selected"; ?>>
                                             Mastercard</option>
                                     </select>
-                                    <!-- <span class="invalid-feedback"><?php echo $payment_method_err; ?></span> -->
                                 </div>
                             </div>
                             <div class="row row-3">
@@ -281,7 +301,6 @@ $imageName = $sdgImages[$selectedLink] ?? null;
                                     <label>Comments</label>
                                     <textarea name="comments"
                                         class="form-control <?php echo (!empty($comments_err)) ? 'is-invalid' : ''; ?>"><?php echo isset($comments) ? $comments : ''; ?></textarea>
-                                    <!-- <span class="invalid-feedback"><?php echo $comments_err; ?></span> -->
                                 </div>
                             </div>
                             <div class="row row-5">
@@ -311,6 +330,15 @@ $imageName = $sdgImages[$selectedLink] ?? null;
             </div>
         </div>
     </footer>
+    <script>
+    function toggleNav() {
+        const nav = document.querySelector('nav.navbar');
+        const navElements = document.getElementById('nav-elements');
+
+        navElements.classList.toggle('show');
+        nav.dataset.nav = (nav.dataset.nav === "true") ? "false" : "true";
+    }
+    </script>
 </body>
 
 </html>

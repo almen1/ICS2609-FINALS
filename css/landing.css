@@ -490,7 +490,7 @@ main>.hero-title {
 @media only screen and (max-width: 600px) {
     body {
         height: 100svh;
-        width: max(100svw 100svw);
+        width: max(100dvw 100dvw);
     }
 
     .navbar[data-nav="false"] {
@@ -526,7 +526,6 @@ main>.hero-title {
         gap: 0em;
         padding: 0;
         margin: 0;
-        background-color: pink;
     }
 
     .burger-menu {
@@ -554,6 +553,9 @@ main>.hero-title {
         padding: 0.5em 1em;
     }
 
+    #donate-btn:hover {
+        transform: scale(0.8);
+    }
     .navbar a {
         font-size: 1rem;
     }
@@ -668,8 +670,6 @@ main>.hero-title {
     }
 }
 
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 920px) {}
 
 @media only screen and (max-width: 680px) {}
